@@ -114,8 +114,6 @@ export default defineComponent({
           }
         })
         .catch((err: Error): void => {
-          console.log(err);
-
           error.value = err.toString();
           isLoading.value = false;
         });

@@ -30,15 +30,30 @@
       </div>
     </div>
 
-    <BaseError v-if="error" :error="error"></BaseError>
+    <EmptyList v-if="error" :error="error"></EmptyList>
 
     <BaseLoader v-if="isLoading" :sizeContainer="550" :sizeCircle="150" />
 
-    <p class="list__table__noMatches" v-if="!list.length && !error && !isLoading">No matches...</p>
+    <p
+      class="list__table__noMatches"
+      v-if="!list.length && !error && !isLoading"
+    >
+      No matches...
+    </p>
 
     <div class="list__table" v-if="list.length && !isLoading && !error">
-      <div class="list__table__row" v-for="character in filteredList" :key="character.id">
-        <div class="list__table__row__column list__table__row__column__avatar list__table__row__column--noPaddingLeft">
+      <div
+        class="list__table__row"
+        v-for="character in filteredList"
+        :key="character.id"
+      >
+        <div
+          class="
+            list__table__row__column
+            list__table__row__column__avatar
+            list__table__row__column--noPaddingLeft
+          "
+        >
           <img class="list__table__image" :src="character.image" alt="" />
         </div>
         <div class="list__table__row__column list__table__row__column__id">
@@ -50,15 +65,21 @@
 
           <p class="list__text">{{ character.name }}</p>
         </div>
-        <div class="list__table__row__column  list__table__row__column__gender ">
+        <div class="list__table__row__column list__table__row__column__gender">
           <p class="list__text list__text--marginRight">Gender:</p>
 
           <img
-            :src="require('../../assets/svg/' + character.gender.toLowerCase() + '.svg')"
+            :src="
+              require('../../assets/svg/' +
+                character.gender.toLowerCase() +
+                '.svg')
+            "
             alt="gender icon"
             class="list__table__row__column__img"
           />
-          <p class="list__text">{{ character.gender === "Alien" ? "unknown" : character.gender }}</p>
+          <p class="list__text">
+            {{ character.gender === "Alien" ? "unknown" : character.gender }}
+          </p>
         </div>
         <div class="list__table__row__column list__table__row__column__species">
           <p class="list__text list__text--marginRight">Species:</p>
@@ -68,19 +89,25 @@
         <div class="list__table__row__column list__table__row__column__episode">
           <p class="list__text list__text--marginRight">Episode:</p>
 
-          <p class="list__text">{{ "episode " + lastEpisode(character.episode) }}</p>
+          <p class="list__text">
+            {{ "episode " + lastEpisode(character.episode) }}
+          </p>
         </div>
         <div class="list__table__row__column list__table__row__column__fav">
           <div
             class="list__table__favourite"
-            :class="{ 'list__table__favourite--fav': isFavourite(character.id) }"
+            :class="{
+              'list__table__favourite--fav': isFavourite(character.id),
+            }"
             @click="toggleFavourite(character.id)"
           >
             <img
               src="../../assets/svg/star.svg"
               alt=""
               class="list__table__favourite__img"
-              :class="{ 'list__table__favourite__img--fav': isFavourite(character.id) }"
+              :class="{
+                'list__table__favourite__img--fav': isFavourite(character.id),
+              }"
             />
           </div>
         </div>
@@ -90,9 +117,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, computed } from "@vue/composition-api";
+import {
+  defineComponent,
+  onMounted,
+  ref,
+  computed,
+} from "@vue/composition-api";
 
-import BaseError from "../global/BaseError.vue";
+import EmptyList from "../global/EmptyList.vue";
 import BaseLoader from "../global/BaseLoader.vue";
 
 import { character } from "../../types";
@@ -101,7 +133,7 @@ export default defineComponent({
   name: "list",
 
   components: {
-    BaseError,
+    EmptyList,
     BaseLoader,
   },
 
