@@ -21,7 +21,6 @@ import {
   watch,
   computed,
 } from "@vue/composition-api";
-import { createLogger } from "vuex";
 
 import Footer from "./components/footer/Footer.vue";
 import Header from "./components/header/Header.vue";
@@ -126,17 +125,18 @@ export default defineComponent({
       const characterList: character[] = [];
 
       if (filter === "indentifier") {
-        const character: character = {
-          episode: res.episode[res.episode.length - 1].slice(40),
-          gender: res.gender,
-          id: res.id,
-          image: res.image,
-          name: res.name,
-          species: res.species,
-        };
-        characterList.push(character);
-
-        return characterList;
+        if (!res.length) {
+          const character: character = {
+            episode: res.episode[res.episode.length - 1].slice(40),
+            gender: res.gender,
+            id: res.id,
+            image: res.image,
+            name: res.name,
+            species: res.species,
+          };
+          characterList.push(character);
+          return characterList;
+        }
       }
 
       res.forEach(
