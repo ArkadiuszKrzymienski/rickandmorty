@@ -7,9 +7,8 @@ export const fetchCharacterList = async (filter: string, value: string, page?: n
     episode: string;
   } = {
     indentifier: `https://rickandmortyapi.com/api/character/${value}`,
-    name: `https://rickandmortyapi.com/api/character?${filter}${value ? "=" + value : ""}${
-      page ? "&page=" + page : ""
-    }`,
+    name: `https://rickandmortyapi.com/api/character?${filter}${value ? "=" + value : ""}${page ? "&page=" + page : ""
+      }`,
     episode: `https://rickandmortyapi.com/api/${filter}/${value}`,
   };
 
