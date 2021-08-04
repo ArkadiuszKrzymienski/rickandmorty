@@ -25,6 +25,10 @@ button:disabled {
   }
 }
 
+body {
+  overflow: hidden;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -33,6 +37,7 @@ button:disabled {
     width: 6px;
   }
 }
+
 ::-webkit-scrollbar-thumb {
   background: $blue;
   border-radius: 30px;
