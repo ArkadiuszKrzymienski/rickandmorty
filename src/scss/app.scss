@@ -1,0 +1,14 @@
+// config
+@import "./config//font.scss";
+@import "./config/variable.scss";
+
+// global
+@import "./global/global.scss";
+
+// components
+@import "./components/header/header.scss";
+@import "./components/select/select.scss";
+@import "./components/loader/loader.scss";
+@import "./components/error/error.scss";
+@import "./components/list/list.scss";
+@import "./components/footer/footer.scss";

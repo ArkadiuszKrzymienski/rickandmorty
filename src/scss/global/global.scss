@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-weight: $fontWeightBold;
+  font-size: $fontSizeBase;
+  color: $darkGray;
+}
+
+input,
+button {
+  font-family: "Poppins", sans-serif;
+  font-weight: $fontWeightBold;
+  font-size: $fontSizeBase;
+  color: $darkGray;
+}
+
+button:disabled {
+  &:hover {
+    cursor: default;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+  @media (max-width: 1024px) {
+    width: 6px;
+  }
+}
+::-webkit-scrollbar-thumb {
+  background: $blue;
+  border-radius: 30px;
+}

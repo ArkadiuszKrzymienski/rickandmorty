@@ -1,0 +1,157 @@
+.header {
+  &__top {
+    display: flex;
+    padding: 32px $padding;
+    border-bottom: 1px solid $lightGray;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      padding: 15px $mediumPadding;
+    }
+
+    @media (max-width: 550px) {
+      flex-direction: column;
+      padding: 10px $smallPadding;
+    }
+
+    &__logo {
+      width: 240px;
+      height: 70px;
+      margin-right: 80px;
+
+      @media (max-width: 1024px) {
+        width: 100px;
+        height: 40px;
+        margin-right: 50px;
+      }
+
+      @media (max-width: 550px) {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      &__img {
+        width: auto;
+        height: 100%;
+      }
+    }
+
+    &__search {
+      display: flex;
+      align-items: center;
+
+      width: 505px;
+      height: 56px;
+
+      border: 1px solid $lightGray;
+      border-radius: 10px;
+
+      @media (max-width: 1024px) {
+        flex-grow: 1;
+        height: 30px;
+      }
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+
+      &__label {
+        flex-shrink: 0;
+        width: 123px;
+        padding: 15px;
+
+        @media (max-width: 1024px) {
+          width: 75px;
+          padding: 5px;
+          font-size: $fontSizeMobile;
+        }
+
+        @media (max-width: 370px) {
+          display: none;
+        }
+      }
+
+      &__container {
+        display: flex;
+        flex-grow: 1;
+        align-items: center;
+        padding-right: 16px;
+
+        &__input {
+          flex-grow: 1;
+          border: none;
+          padding: 14px;
+          width: 200px;
+
+          @media (max-width: 1024px) {
+            width: 100px;
+            padding: 5px;
+            font-size: $fontSizeMobile;
+          }
+
+          &:focus-visible {
+            outline: none;
+          }
+        }
+      }
+
+      &__icon {
+        height: 24px;
+        width: 24px;
+
+        filter: invert(65%) sepia(23%) saturate(5426%) hue-rotate(144deg) brightness(90%) contrast(87%);
+      }
+    }
+  }
+
+  &__bottom {
+    padding: 24px $padding;
+
+    @media (max-width: 1024px) {
+      padding: 5px $mediumPadding 7px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid $lightGray;
+    }
+
+    @media (max-width: 550px) {
+      margin-bottom: 5px;
+      padding: 5px $smallPadding;
+    }
+
+    &__btn {
+      &:first-child {
+        margin-right: 80px;
+
+        @media (max-width: 1024px) {
+          margin-right: 40px;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      background-color: $white;
+
+      border: none;
+      border-bottom: 3px solid $lightGray;
+
+      @media (max-width: 1024px) {
+        font-size: $fontSizeMobile;
+
+        border-bottom: 2px solid $lightGray;
+      }
+
+      &--active {
+        color: $blue;
+        border-bottom: 3px solid $blue;
+
+        @media (max-width: 1024px) {
+          font-size: $fontSizeMobile;
+          border-bottom: 2px solid $blue;
+        }
+      }
+    }
+  }
+}

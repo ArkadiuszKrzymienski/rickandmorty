@@ -1,0 +1,43 @@
+.loader {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  &__circle {
+    position: relative;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+
+    background: linear-gradient($blue, $white);
+
+    animation: rotate 1s linear infinite;
+
+    @keyframes rotate {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 95%;
+      height: 95%;
+
+      transform: translate(-50%, -50%);
+
+      border-radius: 50%;
+      background-color: $white;
+    }
+  }
+}

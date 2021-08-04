@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  padding: 24px $padding;
+  margin-top: 10px;
+
+  border-top: 1px solid $lightGray;
+
+  @media (max-width: 1024px) {
+    padding: 15px $mediumPadding;
+    margin-top: 10;
+  }
+
+  @media (max-width: 550px) {
+    margin-top: 5px;
+    padding: 10px $smallPadding;
+  }
+
+  &__btn {
+    width: 30px;
+    height: 30px;
+
+    background-color: $white;
+    color: $darkGray;
+
+    border: 1px solid $darkGray;
+    border-radius: 5px;
+
+    margin-right: 10px;
+
+    &--active {
+      background-color: $blue;
+      color: $white;
+      border: 1px solid $blue;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
