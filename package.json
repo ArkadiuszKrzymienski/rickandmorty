@@ -1,12 +1,11 @@
 {
-  "name": "rickandmorty",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "sh deploy.sh"
   },
   "dependencies": {
     "@vue/composition-api": "^1.0.5",
