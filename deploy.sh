@@ -16,6 +16,6 @@ git commit -m 'deploy'
 
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:arkadiuszkrzymienski/rickandmorty.git main:gh-pages
+git push -f git@github.com:ArkadiuszKrzymienski/rickandmorty.git main:gh-pages
 
 cd -

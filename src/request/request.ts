@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const fetchCharacterList = async (filter: string, value: string, page?: number): Promise<T> => {
+export const fetchCharacterList = async (filter: string, value: string, page?: number): Promise<any> => {
   const links: {
+    [key: string]: string;
     indentifier: string;
     name: string;
     episode: string;

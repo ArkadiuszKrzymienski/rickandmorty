@@ -29,6 +29,7 @@ export default defineComponent({
 
   setup() {
     const values: {
+      [key: string]: { value: string };
       selectValue: { value: selectType };
       inputValue: { value: string };
       favValue: { value: favType };
@@ -38,7 +39,10 @@ export default defineComponent({
       favValue: ref("all"),
     };
 
-    function setValue(value: selectType | string | favType, type: "select" | "input" | "fav"): void {
+    function setValue(
+      value: selectType | string | favType,
+      type: "select" | "input" | "fav"
+    ): void {
       values[type + "Value"].value = value;
     }
 
@@ -57,7 +61,11 @@ export default defineComponent({
     const page: { value: number } = ref(1);
     const maxPages: { value: number } = ref(1);
 
-    function getCharacterList(filter: string, value: string | number, page: number): void {
+    function getCharacterList(
+      filter: string,
+      value: string,
+      page: any,
+    ): void {
       isLoading.value = true;
 
       fetchCharacterList(filter, value, page)

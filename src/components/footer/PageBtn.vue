@@ -11,25 +11,24 @@
 
 <script lang="ts">
 import { defineComponent, computed } from "@vue/composition-api";
-import { PropType } from "vue";
 
 export default defineComponent({
   name: "PageBtn",
 
   props: {
     number: {
-      type: Number as PropType<number>,
+      type: Number,
     },
     maxPages: {
-      type: Number as PropType<number>,
+      type: Number,
     },
     page: {
-      type: Number as PropType<number>,
+      type: Number,
     },
   },
 
   setup(props, context) {
-    function handleClick(number) {
+    function handleClick(number: number) {
       context.emit("clicked", number);
     }
 
