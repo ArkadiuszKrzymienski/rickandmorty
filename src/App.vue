@@ -67,6 +67,7 @@ export default defineComponent({
       page: any,
     ): void {
       isLoading.value = true;
+      error.value=''
 
       fetchCharacterList(filter, value, page)
         .then((res): void => {
